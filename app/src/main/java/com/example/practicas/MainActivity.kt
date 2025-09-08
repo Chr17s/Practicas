@@ -57,7 +57,6 @@ class MainActivity : ComponentActivity() {
 @Preview(showBackground = true)
 @Composable
 fun Botones() {
-    val texto by remember { mutableStateOf("Enviado") }
     val context = LocalContext.current
     var Nombre by remember { mutableStateOf("") }
     Column (modifier = Modifier.fillMaxWidth(1f),
@@ -80,7 +79,7 @@ fun Botones() {
         Row (modifier = Modifier.padding(20.dp))
         {
             Button(onClick = {Toast.makeText(
-                context, texto, Toast.LENGTH_LONG
+                context, Nombre, Toast.LENGTH_LONG
             ).show()},colors = ButtonDefaults.buttonColors(
                     containerColor = Color.Green
                 )) {
