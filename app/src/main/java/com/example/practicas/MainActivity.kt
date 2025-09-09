@@ -62,7 +62,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun Botones() {
     val context = LocalContext.current
-    var Nombre by remember { mutableStateOf("") }
+    /*var Nombre by remember { mutableStateOf("") }*/
     var ValorA by remember { mutableStateOf("") }
     var ValorB by remember { mutableStateOf("") }
     var Resultado by remember { mutableStateOf("") }
@@ -71,7 +71,7 @@ fun Botones() {
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center,
     ) {
-        Row(modifier= Modifier.padding(10.dp)) {
+        /*Row(modifier= Modifier.padding(10.dp)) {
             Text("Nombre",
                 style = TextStyle(
                     fontSize = 30.sp,
@@ -79,11 +79,11 @@ fun Botones() {
                     color = Color.Blue
                 )
             )
-        }
-        Row(modifier = Modifier.padding(10.dp)) {
+        }*/
+        /*Row(modifier = Modifier.padding(10.dp)) {
             TextField(
                 value = Nombre, onValueChange = { nuevoTexto -> Nombre = nuevoTexto} )
-        }
+        }*/
         Row(
             Modifier.align(Alignment.CenterHorizontally)
         ){
