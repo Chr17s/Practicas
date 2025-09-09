@@ -1,5 +1,7 @@
 package com.example.practicas
 
+import android.R
+import android.graphics.Paint
 import android.graphics.fonts.FontFamily
 import android.os.Bundle
 import android.widget.Toast
@@ -15,6 +17,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedButton
+import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -59,6 +63,10 @@ class MainActivity : ComponentActivity() {
 fun Botones() {
     val context = LocalContext.current
     var Nombre by remember { mutableStateOf("") }
+    var ValorA by remember { mutableStateOf("") }
+    var ValorB by remember { mutableStateOf("") }
+    var Resultado by remember { mutableStateOf("") }
+
     Column (modifier = Modifier.fillMaxWidth(1f),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center,
@@ -76,15 +84,50 @@ fun Botones() {
             TextField(
                 value = Nombre, onValueChange = { nuevoTexto -> Nombre = nuevoTexto} )
         }
+        Row(
+            Modifier.align(Alignment.CenterHorizontally)
+        ){
+            OutlinedTextField(
+                value = ValorA,
+                label = {Text("Primer Valor")},
+                onValueChange = {ValorA = it}
+            )
+        }
+        Row(
+            Modifier.align(Alignment.CenterHorizontally)
+        ){
+            OutlinedTextField(
+                value = ValorB,
+                label = {Text("Segundo Valor")},
+                onValueChange = {ValorB = it}
+            )
+        }
         Row (modifier = Modifier.padding(20.dp))
         {
-            Button(onClick = {Toast.makeText(
-                context, Nombre, Toast.LENGTH_LONG
-            ).show()},colors = ButtonDefaults.buttonColors(
-                    containerColor = Color.Green
-                )) {
-                Text("Enviar")
+            OutlinedButton(onClick = {
+                val a = ValorA.toInt()
+                val b = ValorB.toInt()
+                val c = a+b
+                Resultado = c.toString()
+            }){
+                Text(text = "Enviar")
             }
+            OutlinedButton(onClick = {
+                ValorB = ""
+                ValorA = ""
+                Resultado = ""
+            }){
+                Text(text = "Borrar")
+            }
+        }
+        Row(
+            Modifier.align(Alignment.CenterHorizontally)
+        ){
+            OutlinedTextField(
+                value = Resultado,
+                label = {Text("Resultado")},
+                onValueChange = {Resultado = it}
+            )
         }
     }
 }
