@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -40,9 +41,74 @@ class MainActivity : ComponentActivity() {
 fun Botones() {
     Column (){
         Row() {
-
+            OutlinedButton(onClick = {}){
+                Text(text = "Borrar")
+            }
+            OutlinedButton(onClick = {}){
+                Text(text = "Borrar")
+            }
+            OutlinedButton(onClick = {}){
+                Text(text = "Borrar")
+            }
+            OutlinedButton(onClick = {}){
+                Text(text = "Borrar")
+            }
+            OutlinedButton(onClick = {}){
+                Text(text = "Borrar")
+            }
         }
-        Row() {  }
+        Row() {
+            OutlinedButton(onClick = {}){
+                Text(text = "Borrar")
+            }
+            OutlinedButton(onClick = {}){
+                Text(text = "Borrar")
+            }
+            OutlinedButton(onClick = {}){
+                Text(text = "Borrar")
+            }
+            OutlinedButton(onClick = {}){
+                Text(text = "Borrar")
+            }
+            OutlinedButton(onClick = {}){
+                Text(text = "Borrar")
+            }
+        }
+        Row() {
+            OutlinedButton(onClick = {}){
+                Text(text = "Borrar")
+            }
+            OutlinedButton(onClick = {}){
+                Text(text = "Borrar")
+            }
+            OutlinedButton(onClick = {}){
+                Text(text = "Borrar")
+            }
+            OutlinedButton(onClick = {}){
+                Text(text = "Borrar")
+            }
+            OutlinedButton(onClick = {}){
+                Text(text = "Borrar")
+            }
+        }
+        Row() {
+            OutlinedButton(onClick = {}){
+                Text(text = "Borrar")
+            }
+            OutlinedButton(onClick = {}){
+                Text(text = "Borrar")
+            }
+            OutlinedButton(onClick = {}){
+                Text(text = "Borrar")
+            }
+            OutlinedButton(onClick = {}){
+                Text(text = "Borrar")
+            }
+            OutlinedButton(onClick = {}){
+                Text(text = "Borrar")
+            }
+        }
+        /*Row() {  }
         Row() {  }
         Row() {  }
         Row() {  }
@@ -67,5 +133,5 @@ fun Botones() {
         Row() {  }
         Row() {  }
         Row() {  }
-    }
+    */}
 }
