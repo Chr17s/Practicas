@@ -214,7 +214,8 @@ fun Calculadora() {
 
             // 0
             OutlinedButton(
-                onClick = { num2 += "0" },
+                onClick = { num2 += "0"
+                          operacion += 0},
                 modifier = Modifier.weight(1f)
             ) { Text("0", fontSize = 45.sp, color = Color.Black) }
 
