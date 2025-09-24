@@ -46,8 +46,7 @@ fun VikingsView(navController: NavController){
                 containerColor = Color(0xFF502F84)
             ), navigationIcon = {
                 MainIconButton(icon = Icons.Default.ArrowBack) {
-                    navController.popBackStack()
-                }
+                    navController.navigate("NFC")                }
             }
         )
     }
@@ -66,12 +65,12 @@ fun ContentVikingsView(){
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Image(
-            painter = painterResource(id = R.drawable.casco_vikings),
+            painter = painterResource(id = R.drawable.estadio_vikings),
             contentDescription = "Vikings",
-            modifier = Modifier.size(150.dp)
+            modifier = Modifier.size(400.dp)
         )
 
-        Spacer(modifier = Modifier.height(16.dp))
+        Spacer(modifier = Modifier.height(2.dp))
 
         Text("Minnesota Vikings",
             fontSize = 30.sp,

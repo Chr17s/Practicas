@@ -41,13 +41,13 @@ fun HomeView(navController: NavController) {
             )
         }
     ) { innerPadding ->
-        // Fondo partido dentro del área de contenido del Scaffold
+        // Fondo partido
         Box(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(innerPadding)
         ) {
-            // Capa de fondo: dos mitades
+            // Capa de fondo
             Column(Modifier.fillMaxSize()) {
                 Box(
                     Modifier
@@ -55,9 +55,9 @@ fun HomeView(navController: NavController) {
                         .fillMaxWidth()
                         .background(Color.Red)
                 ) {
-                    // Fondo partido con imágenes
+                    // Fondo partido
                     Column(Modifier.fillMaxSize()) {
-                        // Mitad roja con imagen
+                        // Mitad roja
                         Box(
                             modifier = Modifier
                                 .weight(1f)
@@ -68,10 +68,10 @@ fun HomeView(navController: NavController) {
                             Column (horizontalAlignment = Alignment.CenterHorizontally,
                                 verticalArrangement = Arrangement.Center) {
                                 Image(
-                                    painter = painterResource(id = R.drawable.conferencia_americana), // Imagen AFC
+                                    painter = painterResource(id = R.drawable.americana_sin_fondo),
                                     contentDescription = "AFC"
                                 )
-                                Space(espacio = 20)
+                                Space(espacio = 10)
                                 MainButton(
                                     name = "Conferencia Americana",
                                     backcolor = Color.Red,
@@ -89,14 +89,14 @@ fun HomeView(navController: NavController) {
                             Column (horizontalAlignment = Alignment.CenterHorizontally,
                                 verticalArrangement = Arrangement.Center) {
                                 Image(
-                                    painter = painterResource(id = R.drawable.conferencia_nacional_2), // Imagen AFC
+                                    painter = painterResource(id = R.drawable.nacional_sin_fondo),
                                     contentDescription = "AFC"
                                 )
-                                Space(espacio = 20)
+                                Space(espacio = 10)
                                 MainButton(
                                     name = "Conferencia Nacional",
                                     backcolor = Color.Blue,
-                                    color = Color.White
+                                    color = Color.White,
                                 ) { navController.navigate("NFC") }
                             }
                         }

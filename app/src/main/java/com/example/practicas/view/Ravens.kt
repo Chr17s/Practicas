@@ -44,8 +44,7 @@ fun RavensView(navController: NavController){
                 containerColor = Color(0xFF4D38E8)
             ), navigationIcon = {
                 MainIconButton(icon = Icons.Default.ArrowBack) {
-                    navController.popBackStack()
-                }
+                    navController.navigate("AFC")                }
             }
         )
     }
@@ -64,12 +63,12 @@ fun ContentRavensView(){
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Image(
-            painter = painterResource(id = R.drawable.casco_ravens),
+            painter = painterResource(id = R.drawable.estadio_ravens),
             contentDescription = "Ravens",
-            modifier = Modifier.size(150.dp)
+            modifier = Modifier.size(400.dp)
         )
 
-        Spacer(modifier = Modifier.height(16.dp))
+        Spacer(modifier = Modifier.height(2.dp))
 
         Text("Baltimore Ravens",
             fontSize = 30.sp,
@@ -89,7 +88,7 @@ fun ContentRavensView(){
                     "Lamar Jackson, uno de los quarterbacks más dinámicos de la liga.",
             fontSize = 18.sp,
             color = Color.Black,
-            textAlign = TextAlign.Center
+            textAlign = TextAlign.Justify
         )
     }
 }

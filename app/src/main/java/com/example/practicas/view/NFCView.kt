@@ -48,13 +48,14 @@ fun NFCView(navController: NavController){
                 containerColor = Color.DarkGray
             ), navigationIcon = {
                 MainIconButton(icon = Icons.Default.ArrowBack) {
-                    navController.popBackStack()
-                }
+                    navController.navigate("Home")                }
             }
         )
     }
-    ){
-        NFCDetailView(navController)
+    ){innerPadding ->
+        Box(Modifier.padding(innerPadding).padding(top = 10.dp)) {
+            NFCDetailView(navController)
+        }
     }
 }
 
@@ -64,14 +65,14 @@ fun NFCDetailView(navController: NavController) {
         modifier = Modifier
             .fillMaxSize()
             .padding(16.dp),
-        verticalArrangement = Arrangement.spacedBy(16.dp) // espacio entre filas
+        verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
 
         Row(
             modifier = Modifier
-                .weight(1f)              // ocupa la mitad superior
+                .weight(1f)
                 .fillMaxWidth(),
-            horizontalArrangement = Arrangement.spacedBy(16.dp) // espacio entre columnas
+            horizontalArrangement = Arrangement.spacedBy(16.dp)
         ) {
             // Eagles
             Box(
@@ -91,7 +92,7 @@ fun NFCDetailView(navController: NavController) {
                         color = Color.White)
                     Spacer(Modifier.height(8.dp))
                     Image(
-                        painter = painterResource(id = R.drawable.eagles),
+                        painter = painterResource(id = R.drawable.logoeaglessf),
                         contentDescription = "Philadelphia Eagles",
                         modifier = Modifier.size(96.dp)
                     )
@@ -101,7 +102,7 @@ fun NFCDetailView(navController: NavController) {
                         backcolor = Color(0xFF024C53),
                         color = Color.White
                     ) {
-                        navController.navigate("Eagles")
+                        navController.navigate("SplashEagles")
                     }
                 }
             }
@@ -120,11 +121,11 @@ fun NFCDetailView(navController: NavController) {
                     verticalArrangement = Arrangement.Center
                 ) {
                     Text(text = "Division Norte",
-                        fontSize = 25.sp,
+                        fontSize = 23.sp,
                         color = Color.White)
                     Spacer(Modifier.height(8.dp))
                     Image(
-                        painter = painterResource(id = R.drawable.vikings),
+                        painter = painterResource(id = R.drawable.logovikingssf),
                         contentDescription = "Minnesota Vikings",
                         modifier = Modifier.size(96.dp)
                     )
@@ -134,7 +135,7 @@ fun NFCDetailView(navController: NavController) {
                         backcolor = Color(0xFF502F84),
                         color = Color.White
                     ) {
-                        navController.navigate("Vikings")
+                        navController.navigate("SplashVikings")
                     }
                 }
             }
@@ -164,17 +165,17 @@ fun NFCDetailView(navController: NavController) {
                         color = Color.White)
                     Spacer(Modifier.height(8.dp))
                     Image(
-                        painter = painterResource(id = R.drawable.saints),
+                        painter = painterResource(id = R.drawable.logosaintssf),
                         contentDescription = "New Orleans Saints",
-                        modifier = Modifier.size(96.dp)
+                        modifier = Modifier.size(130.dp)
                     )
-                    Spacer(Modifier.height(12.dp))
+                    Spacer(Modifier.height(9.dp))
                     MainButton(
                         name = "New Orleans Saints",
                         backcolor = Color(0xFFD3BD8C),
                         color = Color.White
                     ) {
-                        navController.navigate("Saints")
+                        navController.navigate("SplashSaints")
                     }
                 }
             }
@@ -197,7 +198,7 @@ fun NFCDetailView(navController: NavController) {
                         color = Color.White)
                     Spacer(Modifier.height(8.dp))
                     Image(
-                        painter = painterResource(id = R.drawable.rams),
+                        painter = painterResource(id = R.drawable.ramslogosf),
                         contentDescription = "Los Angeles Rams",
                         modifier = Modifier.size(96.dp)
                     )
@@ -207,7 +208,7 @@ fun NFCDetailView(navController: NavController) {
                         backcolor = Color(0xFF003593),
                         color = Color.White
                     ) {
-                        navController.navigate("Rams")
+                        navController.navigate("SplashRams")
                     }
                 }
             }

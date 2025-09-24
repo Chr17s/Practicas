@@ -44,8 +44,7 @@ fun TexansView(navController: NavController){
                 containerColor = Color(0xFF03202E)
             ), navigationIcon = {
                 MainIconButton(icon = Icons.Default.ArrowBack) {
-                    navController.popBackStack()
-                }
+                    navController.navigate("AFC")                }
             }
         )
     }
@@ -64,12 +63,12 @@ fun ContentTexansView(){
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Image(
-                painter = painterResource(id = R.drawable.casco_texans),
+                painter = painterResource(id = R.drawable.estadio_texans),
                 contentDescription = "Texans",
-                modifier = Modifier.size(150.dp)
+                modifier = Modifier.size(400.dp)
             )
 
-            Spacer(modifier = Modifier.height(16.dp))
+            Spacer(modifier = Modifier.height(2.dp))
 
             Text("Houston Texans",
                 fontSize = 30.sp,
@@ -87,7 +86,7 @@ fun ContentTexansView(){
                         "de un nuevo proyecto con C.J. Stroud como quarterback, considerado el futuro de la franquicia.",
                 fontSize = 18.sp,
                 color = Color.Black,
-                textAlign = TextAlign.Center
+                textAlign = TextAlign.Justify
             )
         }
     }

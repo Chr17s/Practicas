@@ -24,6 +24,7 @@ import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
@@ -47,13 +48,14 @@ fun AFCView(navController: NavController){
                 containerColor = Color.DarkGray
             ), navigationIcon = {
                 MainIconButton(icon = Icons.Default.ArrowBack) {
-                    navController.popBackStack()
-                }
+                    navController.navigate("Home")                }
             }
         )
     }
-    ){
-        AFCDetailView(navController)
+    ){ innerPadding ->
+        Box(Modifier.padding(innerPadding).padding(top = 10.dp)){
+            AFCDetailView(navController)
+        }
     }
 }
 
@@ -63,14 +65,14 @@ fun AFCDetailView(navController: NavController) {
         modifier = Modifier
             .fillMaxSize()
             .padding(16.dp),
-        verticalArrangement = Arrangement.spacedBy(16.dp) // espacio entre filas
+        verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
 
         Row(
             modifier = Modifier
-                .weight(1f)              // ocupa la mitad superior
+                .weight(1f)
                 .fillMaxWidth(),
-            horizontalArrangement = Arrangement.spacedBy(16.dp) // espacio entre columnas
+            horizontalArrangement = Arrangement.spacedBy(16.dp)
         ) {
             // Bills
             Box(
@@ -90,7 +92,7 @@ fun AFCDetailView(navController: NavController) {
                         color = Color.White)
                     Spacer(Modifier.height(8.dp))
                     Image(
-                        painter = painterResource(id = R.drawable.billslogo),
+                        painter = painterResource(id = R.drawable.billslogosf),
                         contentDescription = "Buffalo Bills",
                         modifier = Modifier.size(96.dp)
                     )
@@ -100,7 +102,7 @@ fun AFCDetailView(navController: NavController) {
                         backcolor = Color(0xFF203B75),
                         color = Color.White
                     ) {
-                        navController.navigate("Bills")
+                        navController.navigate("SplashBills")
                     }
                 }
             }
@@ -119,11 +121,11 @@ fun AFCDetailView(navController: NavController) {
                     verticalArrangement = Arrangement.Center
                 ) {
                     Text(text = "Division Norte",
-                        fontSize = 25.sp,
+                        fontSize = 23.sp,
                         color = Color.White)
                     Spacer(Modifier.height(8.dp))
                     Image(
-                        painter = painterResource(id = R.drawable.ravens),
+                        painter = painterResource(id = R.drawable.logobaltimoresf),
                         contentDescription = "Baltimore Ravens",
                         modifier = Modifier.size(96.dp)
                     )
@@ -133,7 +135,7 @@ fun AFCDetailView(navController: NavController) {
                         backcolor = Color(0xFF4D38E8),
                         color = Color.White
                     ) {
-                        navController.navigate("Ravens")
+                        navController.navigate("SplashRavens")
                     }
                 }
             }
@@ -163,17 +165,17 @@ fun AFCDetailView(navController: NavController) {
                         color = Color.White)
                     Spacer(Modifier.height(8.dp))
                     Image(
-                        painter = painterResource(id = R.drawable.texans),
+                        painter = painterResource(id = R.drawable.texanslogosf),
                         contentDescription = "Houston Texans",
-                        modifier = Modifier.size(96.dp)
+                        modifier = Modifier.size(140.dp)
                     )
-                    Spacer(Modifier.height(12.dp))
+                    Spacer(Modifier.height(8.dp))
                     MainButton(
                         name = "Houston Texans",
                         backcolor = Color(0xFF03202E),
                         color = Color.White
                     ) {
-                        navController.navigate("Texans")
+                        navController.navigate("SplashTexans")
                     }
                 }
             }
@@ -196,7 +198,7 @@ fun AFCDetailView(navController: NavController) {
                         color = Color.White)
                     Spacer(Modifier.height(8.dp))
                     Image(
-                        painter = painterResource(id = R.drawable.chargers),
+                        painter = painterResource(id = R.drawable.logochargerssf),
                         contentDescription = "Los Angeles Chargers",
                         modifier = Modifier.size(96.dp)
                     )
@@ -206,7 +208,7 @@ fun AFCDetailView(navController: NavController) {
                         backcolor = Color(0xFFFFBA09),
                         color = Color.White
                     ) {
-                        navController.navigate("Chargers")
+                        navController.navigate("SplashChargers")
                     }
                 }
             }

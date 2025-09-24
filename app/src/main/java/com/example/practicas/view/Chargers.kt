@@ -44,8 +44,7 @@ fun ChargersView(navController: NavController){
                 containerColor = Color(0xFFFFBA09)
             ), navigationIcon = {
                 MainIconButton(icon = Icons.Default.ArrowBack) {
-                    navController.popBackStack()
-                }
+                    navController.navigate("AFC")                }
             }
         )
     }
@@ -64,12 +63,12 @@ fun ContentChargersView(){
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Image(
-            painter = painterResource(id = R.drawable.casco_chargers),
+            painter = painterResource(id = R.drawable.estadio_chargers),
             contentDescription = "Chargers",
-            modifier = Modifier.size(150.dp)
+            modifier = Modifier.size(400.dp)
         )
 
-        Spacer(modifier = Modifier.height(16.dp))
+        Spacer(modifier = Modifier.height(2.dp))
 
         Text("Los Angeles Chargers",
             fontSize = 30.sp,
@@ -87,7 +86,7 @@ fun ContentChargersView(){
                     "llegar al Super Bowl XXIX en 1995, donde fueron derrotados.",
             fontSize = 18.sp,
             color = Color.Black,
-            textAlign = TextAlign.Center
+            textAlign = TextAlign.Justify
         )
     }
 }

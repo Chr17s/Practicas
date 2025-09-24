@@ -13,6 +13,15 @@ import com.example.practicas.view.NFCView
 import com.example.practicas.view.RamsView
 import com.example.practicas.view.RavensView
 import com.example.practicas.view.SaintsView
+import com.example.practicas.view.SplashScreenBills
+import com.example.practicas.view.SplashScreenChargers
+import com.example.practicas.view.SplashScreenEagles
+import com.example.practicas.view.SplashScreenNFL
+import com.example.practicas.view.SplashScreenRams
+import com.example.practicas.view.SplashScreenRavens
+import com.example.practicas.view.SplashScreenSaints
+import com.example.practicas.view.SplashScreenTexans
+import com.example.practicas.view.SplashScreenVikings
 import com.example.practicas.view.TexansView
 import com.example.practicas.view.VikingsView
 
@@ -20,10 +29,13 @@ import com.example.practicas.view.VikingsView
 fun NavManager(){
     val navController = rememberNavController()
 
-    NavHost(navController = navController, startDestination = "Home")
+    NavHost(navController = navController, startDestination = "NFL")
     {
         composable ("Home"){
             HomeView(navController)
+        }
+        composable ("NFL"){
+            SplashScreenNFL(navController)
         }
         composable ("AFC"){
             AFCView(navController)
@@ -57,6 +69,30 @@ fun NavManager(){
         }
         composable ("Vikings"){
             VikingsView(navController)
+        }
+        composable("SplashBills"){
+            SplashScreenBills(navController)
+        }
+        composable("SplashRams"){
+            SplashScreenRams(navController)
+        }
+        composable("SplashRavens"){
+            SplashScreenRavens(navController)
+        }
+        composable("SplashTexans"){
+            SplashScreenTexans(navController)
+        }
+        composable("SplashChargers"){
+            SplashScreenChargers(navController)
+        }
+        composable("SplashEagles"){
+            SplashScreenEagles(navController)
+        }
+        composable("SplashVikings"){
+            SplashScreenVikings(navController)
+        }
+        composable("SplashSaints"){
+            SplashScreenSaints(navController)
         }
     }
 }

@@ -44,8 +44,7 @@ fun SaintsView(navController: NavController){
                 containerColor = Color(0xFFD3BD8C)
             ), navigationIcon = {
                 MainIconButton(icon = Icons.Default.ArrowBack) {
-                    navController.popBackStack()
-                }
+                    navController.navigate("NFC")                }
             }
         )
     }
@@ -64,12 +63,12 @@ fun ContentSaintsView(){
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Image(
-            painter = painterResource(id = R.drawable.casco_saints),
+            painter = painterResource(id = R.drawable.estadio_saints),
             contentDescription = "Saints",
-            modifier = Modifier.size(150.dp)
+            modifier = Modifier.size(400.dp)
         )
 
-        Spacer(modifier = Modifier.height(16.dp))
+        Spacer(modifier = Modifier.height(2.dp))
 
         Text("New Orleans Saints",
             fontSize = 30.sp,
@@ -87,7 +86,7 @@ fun ContentSaintsView(){
                     "y una afición muy leal llamada Who Dat Nation.",
             fontSize = 18.sp,
             color = Color.Black,
-            textAlign = TextAlign.Center
+            textAlign = TextAlign.Justify
         )
     }
 }

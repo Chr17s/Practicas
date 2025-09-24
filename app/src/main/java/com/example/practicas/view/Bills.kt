@@ -44,7 +44,7 @@ fun BillsView(navController: NavController){
                 containerColor = Color(0xFF203B75)
             ), navigationIcon = {
                 MainIconButton(icon = Icons.Default.ArrowBack) {
-                    navController.popBackStack()
+                    navController.navigate("AFC")
                 }
             }
         )
@@ -64,12 +64,12 @@ fun ContentBillsView(){
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Image(
-            painter = painterResource(id = R.drawable.casco_bills),
+            painter = painterResource(id = R.drawable.estadio_bills),
             contentDescription = "Bills",
-            modifier = Modifier.size(150.dp)
+            modifier = Modifier.size(400.dp)
         )
 
-        Spacer(modifier = Modifier.height(16.dp))
+        Spacer(modifier = Modifier.height(2.dp))
 
         Text("Buffalo Bills",
             fontSize = 30.sp,
@@ -87,7 +87,7 @@ fun ContentBillsView(){
                     "como quarterback estrella.",
             fontSize = 18.sp,
             color = Color.Black,
-            textAlign = TextAlign.Center
+            textAlign = TextAlign.Justify
         )
     }
 }

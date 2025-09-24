@@ -44,8 +44,7 @@ fun RamsView(navController: NavController){
                 containerColor = Color(0xFF003593)
             ), navigationIcon = {
                 MainIconButton(icon = Icons.Default.ArrowBack) {
-                    navController.popBackStack()
-                }
+                    navController.navigate("NFC")                }
             }
         )
     }
@@ -64,12 +63,12 @@ fun ContentRamsView(){
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Image(
-            painter = painterResource(id = R.drawable.casco_rams),
+            painter = painterResource(id = R.drawable.estadio_de_los_rams),
             contentDescription = "Rams",
-            modifier = Modifier.size(150.dp)
+            modifier = Modifier.size(400.dp)
         )
 
-        Spacer(modifier = Modifier.height(16.dp))
+        Spacer(modifier = Modifier.height(2.dp))
 
         Text("Los Angeles Rams",
             fontSize = 30.sp,
@@ -87,7 +86,7 @@ fun ContentRamsView(){
                     "y contar con estrellas como Aaron Donald, Cooper Kupp y Matthew Stafford en los últimos años.",
             fontSize = 18.sp,
             color = Color.Black,
-            textAlign = TextAlign.Center
+            textAlign = TextAlign.Justify
         )
     }
 }

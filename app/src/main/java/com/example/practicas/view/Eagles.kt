@@ -44,8 +44,7 @@ fun EaglesView(navController: NavController){
                 containerColor = Color(0xFF024C53)
             ), navigationIcon = {
                 MainIconButton(icon = Icons.Default.ArrowBack) {
-                    navController.popBackStack()
-                }
+                    navController.navigate("NFC")                }
             }
         )
     }
@@ -64,12 +63,12 @@ fun ContentEaglesView(){
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Image(
-            painter = painterResource(id = R.drawable.casco_eagles),
+            painter = painterResource(id = R.drawable.estadio_eagles),
             contentDescription = "Eagles",
-            modifier = Modifier.size(150.dp)
+            modifier = Modifier.size(400.dp)
         )
 
-        Spacer(modifier = Modifier.height(16.dp))
+        Spacer(modifier = Modifier.height(2.dp))
 
         Text("Philadelphia Eagles",
             fontSize = 30.sp,
@@ -88,7 +87,7 @@ fun ContentEaglesView(){
                     "últimos años han sido constantes contendientes en la NFC.",
             fontSize = 18.sp,
             color = Color.Black,
-            textAlign = TextAlign.Center
+            textAlign = TextAlign.Justify
         )
     }
 }
