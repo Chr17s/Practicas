@@ -5,16 +5,18 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Button
+import androidx.compose.material3.ElevatedCard
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.OutlinedTextField
-import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
@@ -25,13 +27,15 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.practicas.ui.theme.PracticasTheme
-import org.intellij.lang.annotations.JdkConstants
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,7 +45,8 @@ class MainActivity : ComponentActivity() {
             PracticasTheme {
                Surface(
                     modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
+                   color = Color(0XFF002e3e)
+                    /*color = MaterialTheme.colorScheme.background*/
                 ){
                    Botones()
                }
@@ -55,12 +60,20 @@ fun Botones() {
     var sueldo by remember { mutableStateOf("") }
     var ISR by remember { mutableStateOf(0.0) }
     var sueldoNeto by remember { mutableStateOf(0.0) }
+
     Column(
         modifier = Modifier
             .fillMaxSize()
             .padding(10.dp, 30.dp, 10.dp, 10.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
+        Text(
+            "Calculadora ISR",
+            fontSize = 30.sp,
+            fontWeight = FontWeight.Bold,
+            color = Color.White,
+            modifier = Modifier.fillMaxWidth(),
+        )
             Row(modifier = Modifier.padding(30.dp)){
                 Image(
                     painter = painterResource(id = R.drawable.sat),
@@ -68,17 +81,20 @@ fun Botones() {
                 )
             }
             Row(modifier = Modifier.padding(30.dp)) {
-                Text("INGRESO MENSUAL")
+                Text("INGRESO MENSUAL",
+                    fontSize = 20.sp,
+                    fontWeight = FontWeight.SemiBold,
+                    color = Color.White
+                )
             }
-
             Row(modifier = Modifier.padding(10.dp)) {
                 TextField(
                     value = sueldo,
-                    keyboardOptions =
-                        KeyboardOptions(keyboardType = KeyboardType.Number),
-                    onValueChange = { it ->
-                        sueldo = it
-                    }
+                    onValueChange = { sueldo = it },
+                    modifier = Modifier.fillMaxWidth(),
+                    placeholder = { Text("Ej. 25,000.00") },
+                    shape = RoundedCornerShape(12.dp),
+                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
                 )
             }
             Row(modifier = Modifier.padding(30.dp)) {
@@ -138,32 +154,56 @@ fun Botones() {
                     sueldoNeto = sueldoMensual - ISR
 
                 }) {
-                    Text("Calcular")
+                    Text("Calcular",
+                        fontSize = 18.sp,
+                        fontWeight = FontWeight.SemiBold,
+                        color = Color.White
+                    )
                 }
             }
 
-            Row(modifier = Modifier.padding(10.dp)) {
-                Text("ISR")
-            }
+        Spacer(Modifier.height(22.dp))
 
-            Row(modifier = Modifier.padding(10.dp)) {
-                OutlinedTextField(
-                    value = "$" + "%.4f".format(ISR),
-                    onValueChange = { },
-                    readOnly = true
+        ElevatedCard(
+            modifier = Modifier.fillMaxWidth(),
+            shape = RoundedCornerShape(16.dp)
+        ) {
+            Column(Modifier.padding(16.dp)) {
+                Text("ISR",
+                    fontSize = 14.sp,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+                Text(
+                    text = "$" + "%.4f".format(ISR),
+                    fontSize = 22.sp,
+                    fontWeight = FontWeight.SemiBold,
+                    modifier = Modifier.fillMaxWidth(),
+                    textAlign = TextAlign.End
                 )
             }
+        }
 
-            Row(modifier = Modifier.padding(10.dp)) {
-                Text("SUELDO NETO")
-            }
+        Spacer(Modifier.height(12.dp))
 
-            Row(modifier = Modifier.padding(5.dp)) {
-                OutlinedTextField(value = "$" + "%.4f".format(sueldoNeto),
-                    onValueChange = { },
-                    readOnly = true
+        ElevatedCard(
+            modifier = Modifier.fillMaxWidth(),
+            shape = RoundedCornerShape(16.dp)
+        ) {
+            Column(Modifier.padding(16.dp)) {
+                Text("Sueldo neto",
+                    fontSize = 14.sp,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+                Text(
+                    text = "$" + "%.4f".format(sueldoNeto),
+                    fontSize = 24.sp,
+                    fontWeight = FontWeight.Bold,
+                    color = Color(0xFF2E7D32),
+                    modifier = Modifier.fillMaxWidth(),
+                    textAlign = TextAlign.End
                 )
             }
+        }
     }
 }
 
